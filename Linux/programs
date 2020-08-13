@@ -33,6 +33,11 @@ sudo apt-add-repository ppa:webupd8team/atom
 sudo apt update
 sudo apt install atom
 
+====KolourPaint====
+
+Для несложного редактирования картинок. Более сложные эффекты и варианты обработки изображений выполняет приложение GIMP, которое ближе по возможностям 
+к Adobe Photoshop. Доступен в Ubuntu Software Center.
+
 ====Gimp====
 
 Gimp - лучшее приложение Ubuntu для работы с изображениями. Это самый многофункциональный аналог Photoshop для linux. Здесь поддерживаются все необходимые 
@@ -72,7 +77,11 @@ sudo gdebi teamviewer_linux.deb
 Установка:
 sudo apt install gparted
 
+====LibreOffice====
 
+По умолчанию в Ubuntu он поставляется в урезанном виде — редактор текста LO Writer и электронные таблицы Calc. Чтобы доустановить необходимые компоненты 
+LibreOffice, нужно скачать программы для Ubuntu в приложении Software Center. Совместимость по форматам файлов с MS Office делает этот пакет достойным 
+альтернативным решением для офисной работы.
 
 
 
