@@ -4,3 +4,8 @@ find /var/log  -type f -mtime +91 -exec rm {} \;
 
 ### Удалить 5 самых старых каталогов в /var/www/html/releases/
 ls -dtr /var/www/html/releases/*/ | head -n -5 | xargs -r rm -rf --
+
+### Принудительная замена символической ссылки
+"sudo ln -sfT /var/www/html/releases/$version/ /var/www/html/index-simlink"
+-f -принудительно
+-T -заменить
