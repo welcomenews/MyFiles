@@ -2,3 +2,5 @@
 #!/bin/bash
 find /var/log  -type f -mtime +91 -exec rm {} \;
 
+### Удалить 5 самых старых каталогов
+ls -dtr */ | head -n -5 | xargs -r rm -rf --
