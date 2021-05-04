@@ -1,0 +1,71 @@
+----
+curl 'https://api.vscale.io/v1/images' -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' | python3 -mjson.tool |grep  "ubuntu"
+Эта команда вытаскивае в формате json все образы ubuntu из vscale
+----
+++--------------------
+https://vscale.io/ru/help/help-faq-start.html
+https://developers.vscale.io/documentation/api/v1/#api-Servers-PostScalet
+https://developers.vscale.io/documentation/api/v1/#api-Background-GetImages
+https://habr.com/ru/company/selectel/blog/266655/
+https://gist.github.com/reddare/fb46df9d7a37ae59723d0bc2d1180275
+----------------------++
+
++++=============
+Работа с VM на ресурсе vscale.io
+Создание машины Ubuntu
+curl -i -X POST 'https://api.vscale.io/v1/scalets' -H 'Content-Type: application/json;charset=UTF-8' -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' -d '{"make_from":"ubuntu_18.04_64_001_master","rplan":"medium","do_start":true,"name":"welcome-news","password":"987654321","keys":[68366],"location":"spb0"}'
+Создание машины CentOS
+curl -i -X POST 'https://api.vscale.io/v1/scalets' -H 'Content-Type: application/json;charset=UTF-8' -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' -d '{"make_from":"centos_7_64_001_master","rplan":"medium","do_start":true,"name":"welcome-news","password":"987654321","keys":[68366],"location":"spb0"}'
+
+Апгрейд машины
+curl -i 'https://api.vscale.io/v1/scalets/4113652/upgrade' -X POST -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' --data-binary '{"rplan":"large"}' -H 'Content-Type: application/json;charset=UTF-8'
+
+
+Создание ssh ключа 
+curl 'https://api.vscale.io/v1/sshkeys' -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBdK+39nAhLyP932ZRGuu0QusGN9AgElknsfWdQfA/ru7tlwPUVYWeW4P4pFxUJOHZxjP4sj3CRAPT0VVBNI88r3s0YqM5fr7bG3kZSjVaXsZ56RoS+NuhYlNyPnWpD5Fdv+Adj9qZG5RaylFlxYAoHg4rpHOa3g6xx6KeWjBwUJ1DnY4xAonc70K35o/b5/xd37JTu75GqiKWTUsddTn1sTJHJs1oN9fzFABiskSf1TnZ4wdw2YIiTMWJzd3eBnOWARywriRCfxVK/JnhBaY8VLyPGnKYfykbHhOxUCEHESKPaCaB5talP4BEefRFfl3nNrZ7rjSpYlvgfQGIqA5Qme2NnUzZJehE/mIXfbgqls8dyKO3CughjqAXjfTtBXhfqKre1oFwerQjJ95x64Okfam/i6+9MrCq1mYsOcoV8Vu39bRdQEUoEsIgJzXPYGwflAKojh6Lri9cimDmYzPfol+p9qIVITxf/bRlHXJqnPLZa5E9T68gbnods28IoEM= sergey@isa", "name":"welcome-news"}'
+
+Добавлении ключа в сервер
+curl 'https://api.vscale.io/v1/scalets/4223272 -X PATCH -H 'Content-Type: application/json;charset=UTF-8' -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' --data-binary '{"keys":[68366]}'
+
+Смотреть инфу по созданной машине
+curl 'https://api.vscale.io/v1/scalets/4223272' -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' | python3 -mjson.tool
+
+Удаление сервера
+curl 'https://api.vscale.io/v1/scalets/4223272' -X DELETE  -H 'X-Token: dd4a3ba5b696ba5e6aa973c72ca381dd61cb30f9d0d52290e9c0726c4d2e330f' -H 'Content-Type: application/json;charset=UTF-8' | python3 -mjson.tool
+=============+++
+
+
++++=============
+https://developers.digitalocean.com/documentation/v2/
+Работа с VM на ресурсе digitalocean.com
+List All Keys
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/account/keys" | python3 -mjson.tool
+
+Add-ssh-key
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" -d '{"name":"welcome-news","public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBdK+39nAhLyP932ZRGuu0QusGN9AgElknsfWdQfA/ru7tlwPUVYWeW4P4pFxUJOHZxjP4sj3CRAPT0VVBNI88r3s0YqM5fr7bG3kZSjVaXsZ56RoS+NuhYlNyPnWpD5Fdv+Adj9qZG5RaylFlxYAoHg4rpHOa3g6xx6KeWjBwUJ1DnY4xAonc70K35o/b5/xd37JTu75GqiKWTUsddTn1sTJHJs1oN9fzFABiskSf1TnZ4wdw2YIiTMWJzd3eBnOWARywriRCfxVK/JnhBaY8VLyPGnKYfykbHhOxUCEHESKPaCaB5talP4BEefRFfl3nNrZ7rjSpYlvgfQGIqA5Qme2NnUzZJehE/mIXfbgqls8dyKO3CughjqAXjfTtBXhfqKre1oFwerQjJ95x64Okfam/i6+9MrCq1mYsOcoV8Vu39bRdQEUoEsIgJzXPYGwflAKojh6Lri9cimDmYzPfol+p9qIVITxf/bRlHXJqnPLZa5E9T68gbnods28IoEM= sergey@isa"}' "https://api.digitalocean.com/v2/account/keys"
+ssh-id 30228741
+
+Retrieve an Existing Key
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/account/keys/30172287" | python3 -mjson.tool
+
+Создание машины Ubuntu
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" -d '{"name":"welcome-news","region":"fra1","size":"s-1vcpu-1gb","image":"ubuntu-18-04-x64","ssh_keys":[30228741],"backups":false,"ipv6":false,"user_data":null,"private_networking":null,"volumes": null,"tags":["welcome"]}' "https://api.digitalocean.com/v2/droplets" | python3 -mjson.tool
+
+Смотреть инфу по созданной машине
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/droplets/244588275" | python3 -mjson.tool
+
+IP-165.22.21.126
+
+Удаление сервера
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/droplets/244588275"
+
+Список регионов
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/regions" | python3 -mjson.tool
+
+
+Добрый вечер  на vscale.io не пускает по ssh на только что созданную виртуалку???? Вчера было всё хорошо. У меня ещё одна машина есть там вчера созданная и с ней нет проблем на вход.
+
+Запрос на добавление токена
+curl -D - -X POST http://127.0.0.1:8080/v1/user/get_token -d '{"email":"wer@we.ru", "password":"12345", "status":true}'
+curl -D - -X POST http://127.0.0.1:8080/v1/user/get_token -d '{"email":"ew@er.ru", "password":"1232", "role":1, "status":true}'
+
