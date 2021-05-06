@@ -1,0 +1,15 @@
+https://gitlab.com/gitlab-org/gitlab-foss/-/issues/15530
+===================
+build-binary:
+  image: golang:1.12
+  stage: build_binary
+  script:
+    - go build -o <binary_name> 
+    - mv ./<binary_name> ${CI_PROJECT_DIR}
+  only:
+    - development
+  allow_failure: false
+  artifacts:
+    paths:
+      - ./<binary_name>
+===============
