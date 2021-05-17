@@ -48,11 +48,14 @@ Listing Droplets by Tag
 curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/droplets?tag_name=welcome" | python3 -mjson.tool
 
 Add-ssh-key
+home
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" -d '{"name":"welcome-news","public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBdK+39nAhLyP932ZRGuu0QusGN9AgElknsfWdQfA/ru7tlwPUVYWeW4P4pFxUJOHZxjP4sj3CRAPT0VVBNI88r3s0YqM5fr7bG3kZSjVaXsZ56RoS+NuhYlNyPnWpD5Fdv+Adj9qZG5RaylFlxYAoHg4rpHOa3g6xx6KeWjBwUJ1DnY4xAonc70K35o/b5/xd37JTu75GqiKWTUsddTn1sTJHJs1oN9fzFABiskSf1TnZ4wdw2YIiTMWJzd3eBnOWARywriRCfxVK/JnhBaY8VLyPGnKYfykbHhOxUCEHESKPaCaB5talP4BEefRFfl3nNrZ7rjSpYlvgfQGIqA5Qme2NnUzZJehE/mIXfbgqls8dyKO3CughjqAXjfTtBXhfqKre1oFwerQjJ95x64Okfam/i6+9MrCq1mYsOcoV8Vu39bRdQEUoEsIgJzXPYGwflAKojh6Lri9cimDmYzPfol+p9qIVITxf/bRlHXJqnPLZa5E9T68gbnods28IoEM= sergey@isa"}' "https://api.digitalocean.com/v2/account/keys"
+work
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" -d '{"name":"welcome-news","public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgNFXs7Oi9NZVLxu2B+f/Fsm/FZ2t0B1M6TFs/gIpOEenNF9FuUzR3DwWjWQE7sCSLOQzSel5CI6kbEt//BsuxTObSNikrxisYAOoYnySaM8nopN9XvnVK43Cus414b4WgbtpHeKuNERhFvI9Sypm47SDI+Ao611sb4cLZQDuzuFfvgOBIZuvtAdoPsXtWdSVXFBbAgvJuPGNxfquu0IJoDDWCf2+wJ0qAvd27btKxOtDuGmp/te6rA1+sThjS9mZPUcjVER81kqAhNrOGbXhFxP4giRS5kCKC5L90uGCjzw/0u2qP4obViQ4/iAVjZyM3cA43Uagbo8EZdIX+w/yH sergey@LinuxTest"}' "https://api.digitalocean.com/v2/account/keys"
 
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" -d '{"name":"welcome-news","public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgNFXs7Oi9NZVLxu2B+f/Fsm/FZ2t0B1M6TFs/gIpOEenNF9FuUzR3DwWjWQE7sCSLOQzSel5CI6kbEt//BsuxTObSNikrxisYAOoYnySaM8nopN9XvnVK43Cus414b4WgbtpHeKuNERhFvI9Sypm47SDI+Ao611sb4cLZQDuzuFfvgOBIZuvtAdoPsXtWdSVXFBbAgvJuPGNxfquu0IJoDDWCf2+wJ0qAvd27btKxOtDuGmp/te6rA1+sThjS9mZPUcjVER81kqAhNrOGbXhFxP4giRS5kCKC5L90uGCjzw/0u2qP4obViQ4/iAVjZyM3cA43Uagbo8EZdIX+w/yH sergey@LinuxTest"}' "https://api.digitalocean.com/v2/account/keys"
 ssh-id 30228741 (home)
-"id":30282210  (work)
+"id":30334590  (work)
 
 Retrieve an Existing Key
 curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/account/keys/30172287" | python3 -mjson.tool
