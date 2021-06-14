@@ -1,3 +1,17 @@
 https://prometheus.io/download/      Скачать всё для prometheus
 https://habr.com/ru/post/327630/     
 https://awesome-prometheus-alerts.grep.to/rules#windows-server    Правила алертов prometheus
+https://laurvas.ru/prometheus-p3/             Настройка prometheus
+
+
+Эти настройки прописывается в promrtheus.service
+--storage.tsdb.retention.time=... определяет как долго Prometheus будет хранить собранные метрики. Длительность указывается так же, как и в PromQL для 
+диапазонного вектора: 30d — это 30 дней. По умолчанию метрики хранятся 15 дней, потом исчезают. К сожалению нельзя одни метрики хранить долго, а другие 
+коротко, как, например, в Graphite. В Prometheus лимит общий для всех.
+
+--storage.tsdb.retention.size=... определяет сколько дискового пространства Prometheus может использовать под метрики. По-моему эта опция удобнее предыдущей: 
+можно указать всё свободное место на диске и получить настолько долгие метрики, насколько это возможно при любом их количестве.
+
+не забываем про:
+# systemctl daemon-reload
+# systemctl restart prometheus
