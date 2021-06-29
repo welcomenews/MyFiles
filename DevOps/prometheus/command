@@ -1,6 +1,3 @@
 __name__=~".*"    показать все метрики
 или  __name__=~".*."
 
-
-
-https://laurvas.ru/prometheus-p3/#service-discovery
