@@ -86,3 +86,6 @@ curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a
 curl -D - -X POST http://127.0.0.1:8080/v1/user/get_token -d '{"email":"wer@we.ru", "password":"12345", "status":true}'
 curl -D - -X POST http://127.0.0.1:8080/v1/user/get_token -d '{"email":"ew@er.ru", "password":"1232", "role":1, "status":true}'
 
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 903a34e42cbc897d90448d9e2c24fe3786548b84da8e3ca01194d907aa224b09" "https://api.digitalocean.com/v2/droplets/254303562" | python3 -mjson.tool
+68.183.65.165
+
