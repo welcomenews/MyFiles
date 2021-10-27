@@ -9,3 +9,7 @@ ls -dtr /var/www/html/releases/*/ | head -n -5 | xargs -r rm -rf --
 "sudo ln -sfT /var/www/html/releases/$version/ /var/www/html/index-simlink"
 -f -принудительно
 -T -заменить
+
+можно выполнить в терминале, проверка успешности выполнения предыдущей команды
+if (($(echo $?) == 0)); then echo hi; fi
+
