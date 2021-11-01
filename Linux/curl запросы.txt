@@ -55,7 +55,7 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58
 
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" -d '{"name":"welcome-news","public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgNFXs7Oi9NZVLxu2B+f/Fsm/FZ2t0B1M6TFs/gIpOEenNF9FuUzR3DwWjWQE7sCSLOQzSel5CI6kbEt//BsuxTObSNikrxisYAOoYnySaM8nopN9XvnVK43Cus414b4WgbtpHeKuNERhFvI9Sypm47SDI+Ao611sb4cLZQDuzuFfvgOBIZuvtAdoPsXtWdSVXFBbAgvJuPGNxfquu0IJoDDWCf2+wJ0qAvd27btKxOtDuGmp/te6rA1+sThjS9mZPUcjVER81kqAhNrOGbXhFxP4giRS5kCKC5L90uGCjzw/0u2qP4obViQ4/iAVjZyM3cA43Uagbo8EZdIX+w/yH sergey@LinuxTest"}' "https://api.digitalocean.com/v2/account/keys"
 ssh-id 30363684 (home) 31236215
-"id":31266949  (work)
+"id":32236797  (work)
 
 Retrieve an Existing Key
 curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/account/keys/30172287" | python3 -mjson.tool
@@ -69,8 +69,8 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58
 Смотреть инфу по созданной машине
 curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 3eb58a2bfe3ab22d80ec96e29e41d7e1e60b4bfb3f497226e10753b819c3fd14" "https://api.digitalocean.com/v2/droplets/246912796" | python3 -mjson.tool
 
-IP-167.99.241.173
-265027285  dropletID
+IP-207.154.250.168
+271734377  dropletID
 rebraindev@gmail.com
 
 Удаление сервера
