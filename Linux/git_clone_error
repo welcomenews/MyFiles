@@ -1,0 +1,1 @@
+Если не срабатывает команда git clone --- то выполняем команду export GIT_SSL_NO_VERIFY=1
