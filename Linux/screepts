@@ -10,6 +10,11 @@ ls -dtr /var/www/html/releases/*/ | head -n -5 | xargs -r rm -rf --
 -f -принудительно
 -T -заменить
 
-можно выполнить в терминале, проверка успешности выполнения предыдущей команды
+### можно выполнить в терминале, проверка успешности выполнения предыдущей команды
 if (($(echo $?) == 0)); then echo hi; fi
+
+### Вы можете написать сценарий, который возвращает только IP, как:
+hostname -i # Debian
+hostname -i | awk '{print $3}' # Ubuntu 
+/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'
 
