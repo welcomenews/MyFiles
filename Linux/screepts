@@ -15,6 +15,6 @@ if (($(echo $?) == 0)); then echo hi; fi
 
 ### Вы можете написать сценарий, который возвращает только IP, как:
 hostname -i # Debian
-hostname -i | awk '{print $3}' # Ubuntu 
+hostname -I | awk '{print $3}' # Ubuntu 
 /sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'
 
