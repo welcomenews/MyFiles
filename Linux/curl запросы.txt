@@ -89,3 +89,17 @@ curl -D - -X POST http://127.0.0.1:8080/v1/user/get_token -d '{"email":"ew@er.ru
 curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 903a34e42cbc897d90448d9e2c24fe3786548b84da8e3ca01194d907aa224b09" "https://api.digitalocean.com/v2/droplets/254303562" | python3 -mjson.tool
 68.183.65.165
 
+
+## Для создание DNS записи типа A в cloudflare вы можете использовать curl, пример которого приведен ниже:
+curl -X POST "https://api.cloudflare.com/client/v4/zones/9152ec3c08b1a4faeaa95353a929fcc5/dns_records" -H "Authorization: Bearer dffdf.." -H "Content-Type:application/json" --data '{"type":"A","name":"exemple.com","content":"1.1.1.1","proxied":false}'
+## В ответ на эту команду вы получите уникальный идентификатор записи:
+{"result":{"id":"f3e4808896173309cbe80254e37225b7","zone_id":"9152ec3c08b1a4faeaa9...
+## В данном случае id - f3e4808896173309cbe80254e37225b7. Он потребуется, если вам придется обновить dns запись на новый адрес
+curl -X PUT "https://api.cloudflare.com/client/v4/zones/9152ec3c08b1a4faeaa95353a929fcc5/dns_records/${dns id}" -H "Authorization: Bearer erfe... " -H "Content-Type:application/json" --data '{"type":"A","name":"exemple.com","content":"1.1.1.1","proxied":false}'
+
+
+
+
+
+
+
