@@ -24,3 +24,12 @@ $ git config --global init.defaultBranch main
 Проверка настроек
 Если вы хотите проверить используемую конфигурацию, можете использовать команду git config --list, чтобы показать все настройки, которые Git найдёт:
 
+Ошибка
+GitHub Error - "ssh: connect to host github.com port 22: Operation timed out fatal: Could not read from remote repository."
+нужно
+edit ~/.ssh/config and put this lines:
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  
+  
