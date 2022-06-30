@@ -1,1 +1,21 @@
 
+Для его работы требуется целый набор библиотек.
+
+apt-get install \
+libpcap0.8 \
+libpcap-dev \
+libnet-pcap-perl \
+libyaml-perl \
+libyaml-dev \
+libyaml-0-1 \
+-y
+
+PERL_MM_USE_DEFAULT=1
+
+cpan -i \
+Net::RawIP \
+NetPacket::Ethernet
+
+tar xvfz killcx-1.0.3.tgz
+cd killcx-1.0.3/
+cp killcx /usr/bin/
