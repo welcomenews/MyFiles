@@ -28,6 +28,7 @@ cat ~/.ssh/id_rsa.pub | pbcopy
 pythom3 -m http.server --directory .
 
 ###  Отключить сессию подключёную к порту 8080 локальной машины
+###  Программа в дире killcx
 #!/bin/bash
 OUT="$(ss -tn src :8080 | awk '{print $NF}' | awk FNR=2)"
 
