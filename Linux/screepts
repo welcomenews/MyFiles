@@ -41,3 +41,8 @@ else
       killcx $OUT enp0s3
       echo "Session IP $OUT killed"
       
+### Очистка кэша менеджера обновлений
+pkcon refresh force -c -1
+http://compizomania.blogspot.com/2018/06/pkcon-linux.html
+
+
