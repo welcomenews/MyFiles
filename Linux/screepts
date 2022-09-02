@@ -46,3 +46,6 @@ pkcon refresh force -c -1
 http://compizomania.blogspot.com/2018/06/pkcon-linux.html
 
 
+###  Узнать версию дистрибутива Linux
+lsb_release -a
+
