@@ -136,4 +136,20 @@ LibreOffice, нужно скачать программы для Ubuntu в пр�
 подвергались мощной чистке. BleachBit может сделать это.
 
 
+====sockperf=====
+
+Протестируйте свою сеть
+
+Для Astra Linux нужно поставить пакеты
+
+# wget http://ftp.de.debian.org/debian/pool/main/g/gcc-10/gcc-10-base_10.2.1-6_amd64.deb
+# dpkg -i gcc-10-base_10.2.1-6_amd64.deb
+# wget http://ftp.de.debian.org/debian/pool/main/g/gcc-10/libgcc-s1_10.2.1-6_amd64.deb
+# dpkg -i libgcc-s1_10.2.1-6_amd64.deb
+# wget http://archive.ubuntu.com/ubuntu/pool/universe/s/sockperf/sockperf_3.6-2build1_amd64.deb
+# dpkg -i sockperf_3.6-2build1_amd64.deb
+
+
+
+
 
