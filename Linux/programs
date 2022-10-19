@@ -149,6 +149,10 @@ LibreOffice, нужно скачать программы для Ubuntu в пр�
 # wget http://archive.ubuntu.com/ubuntu/pool/universe/s/sockperf/sockperf_3.6-2build1_amd64.deb
 # dpkg -i sockperf_3.6-2build1_amd64.deb
 
+На сервере
+# sockperf sr -i IP --tcp
+на клиенте
+# sockperf pp -i SERVER_IP --tcp -m 4096
 
 
 
