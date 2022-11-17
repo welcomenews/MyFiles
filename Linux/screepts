@@ -67,6 +67,24 @@ truncate -s 0 filename
 sed 's/:.*//' /etc/passwd
 -----------------------------
 
+#### Принять 3 аргумента из cmd в скрипт
+#!/bin/bash
+
+# Inpit 3 agrs from terminal
+
+while getopts c:o:n: flag
+do
+  case "${flag}" in
+    c) c=${OPTARG};;
+    o) o=${OPTARG};;
+    n) n=${OPTARG};;
+  esac
+done
+
+echo "/c=${c}/o=${o}"
+echo "/n=${n}"
+==================================
+
 
 
 
