@@ -1,3 +1,6 @@
+Общепринятые Коммиты 1.0.0-beta.2
+https://www.conventionalcommits.org/ru/v1.0.0-beta.2/
+
 Перемещение на один коммит назад   -  ^    (пример: git checkout master^)
 Перемещение на коммитов назад     -  ~<num> (пример: git checkout HEAD~3)
 Сливает ту ветку в которой сейчас ты с веткой мастер и делает комит слитой ветки  -  git rebase master
