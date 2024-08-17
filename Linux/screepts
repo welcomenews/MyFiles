@@ -24,6 +24,9 @@ ssh-copy-id user@NODEIP
 ###  скопировать в буфер содержимое ключа не отображая его на экране
 cat ~/.ssh/id_rsa.pub | pbcopy
 
+###  Удалить запись о входе с определённого узла по ssh
+sed -i.bak '/192.168.1.1/d' /home/sergey/.ssh/known_hosts
+
 ###  Быстро запустить web сервер чтобы опубликовать файлы и директории (--directory . это путь для опуб-я)
 pythom3 -m http.server --directory .
 
