@@ -18,6 +18,9 @@ hostname -i # Debian
 hostname -I | awk '{print $3}' # Ubuntu 
 /sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'
 
+### Показать расширенную инфу по интерфейсу
+ip -details link show <имя сетевого интерфейса>
+
 ### скачать ssh ключ для авторизации, для того чтобы выполнять командв удалённо
 ssh-copy-id user@NODEIP  
 
