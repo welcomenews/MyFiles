@@ -126,6 +126,8 @@ sudo find -L /var/log/ -perm 644 -type f -exec ls -l {} \;
 stat -c %Y /var/cache/dnf/ >> last_update_time
 # или смотреть последние изменённые файлы( директории )
 ls -l /var/cache/dnf/
+# или смотреть команду.
+less /var/log/dnf.log | grep "dnf update"
 
 ===================================
 
